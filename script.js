@@ -128,9 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyProfile(data) {
         if (!data) return;
 
-        if (profileNameTop) profileNameTop.textContent = '𝐞𝐱';
-        if (enterTitleName) enterTitleName.textContent = '𝐞𝐱';
-        if (cardUsername) cardUsername.textContent = '𝐞𝐱';
+        if (profileNameTop) profileNameTop.textContent = 'vercel';
+        if (enterTitleName) enterTitleName.textContent = 'vercel';
+        if (cardUsername) cardUsername.textContent = 'vercel';
 
         if (data.avatar_url) {
             if (profileAvatarTop) {
