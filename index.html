@@ -33,7 +33,7 @@
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
             </svg>
-            <span id="views-count-text" class="views-text">1,482</span>
+            <span id="views-count-text" class="views-text">1,488</span>
             <span class="views-label">visites</span>
         </div>
     </div>
@@ -59,27 +59,71 @@
     <!-- Contenu principal -->
     <div id="main-content" class="hidden">
         <div class="content-wrapper">
-            <!-- Avatar avec couronne animée -->
+            <!-- Avatar avec couronne royale animée -->
             <div class="avatar-crown-wrapper">
                 <div class="crown-icon-animated">
-                    <svg viewBox="0 0 24 24" fill="none" class="crown-svg">
+                    <svg viewBox="0 0 64 48" class="crown-svg" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fff5c0"/>
-                                <stop offset="40%" stop-color="#fde047"/>
+                            <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fffbeb"/>
+                                <stop offset="25%" stop-color="#fde047"/>
+                                <stop offset="60%" stop-color="#eab308"/>
+                                <stop offset="100%" stop-color="#a16207"/>
+                            </linearGradient>
+                            <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="50%" stop-color="#fef08a"/>
                                 <stop offset="100%" stop-color="#ca8a04"/>
                             </linearGradient>
-                            <filter id="crownGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
-                                <feGaussianBlur stdDeviation="1.2" result="blur"/>
-                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            <radialGradient id="rubyGrad" cx="35%" cy="35%" r="65%">
+                                <stop offset="0%" stop-color="#ffedd5"/>
+                                <stop offset="40%" stop-color="#f43f5e"/>
+                                <stop offset="100%" stop-color="#881337"/>
+                            </radialGradient>
+                            <radialGradient id="diamondGrad" cx="30%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="60%" stop-color="#e0f2fe"/>
+                                <stop offset="100%" stop-color="#38bdf8"/>
+                            </radialGradient>
+                            <filter id="royalGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+                                <feColorMatrix in="blur" type="matrix" values="
+                                    1 0 0 0 0.99
+                                    0 0.88 0 0 0.88
+                                    0 0 0.28 0 0.28
+                                    0 0 0 1 0" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
                             </filter>
                         </defs>
-                        <path d="M2 19h20v2.5H2V19zm1.2-3.8L5 7.5l4.5 4.8L12 3.5l2.5 8.8L19 7.5l1.8 7.7H3.2z" fill="url(#crownGrad)" filter="url(#crownGlowFilter)"/>
-                        <circle cx="12" cy="3.5" r="1.6" fill="#ffffff" filter="url(#crownGlowFilter)"/>
-                        <circle cx="5" cy="7.5" r="1.3" fill="#fffbe8"/>
-                        <circle cx="19" cy="7.5" r="1.3" fill="#fffbe8"/>
-                        <circle cx="9.5" cy="12.3" r="1" fill="#fef08a"/>
-                        <circle cx="14.5" cy="12.3" r="1" fill="#fef08a"/>
+                        <g filter="url(#royalGlow)">
+                            <path d="M14 36 C18 24, 26 18, 32 18 C38 18, 46 24, 50 36 Z" fill="rgba(161, 98, 7, 0.35)" stroke="url(#goldGrad1)" stroke-width="0.8"/>
+                            <path d="M8 37 Q32 43 56 37 L57 42 Q32 48 7 42 Z" fill="url(#goldGrad1)" stroke="#ca8a04" stroke-width="0.5"/>
+                            <path d="M10 38.5 Q32 44 54 38.5" stroke="url(#goldLight)" stroke-width="1" fill="none"/>
+                            <path d="M26 38 L32 8 L38 38 Z" fill="url(#goldGrad1)"/>
+                            <path d="M32 8 L32 39" stroke="url(#goldLight)" stroke-width="1.2"/>
+                            <path d="M16 37 L20 18 L27 37 Z" fill="url(#goldGrad1)"/>
+                            <path d="M20 18 L22 37" stroke="url(#goldLight)" stroke-width="1"/>
+                            <path d="M37 37 L44 18 L48 37 Z" fill="url(#goldGrad1)"/>
+                            <path d="M44 18 L42 37" stroke="url(#goldLight)" stroke-width="1"/>
+                            <path d="M8 37 L9 24 L17 37 Z" fill="url(#goldGrad1)"/>
+                            <path d="M9 24 L12 37" stroke="url(#goldLight)" stroke-width="0.8"/>
+                            <path d="M47 37 L55 24 L56 37 Z" fill="url(#goldGrad1)"/>
+                            <path d="M55 24 L52 37" stroke="url(#goldLight)" stroke-width="0.8"/>
+                            <path d="M32 3 L35 7 L32 11 L29 7 Z" fill="url(#diamondGrad)" stroke="#ffffff" stroke-width="0.6"/>
+                            <circle cx="32" cy="7" r="1" fill="#ffffff"/>
+                            <circle cx="20" cy="18" r="2.2" fill="url(#rubyGrad)" stroke="#fde047" stroke-width="0.6"/>
+                            <circle cx="44" cy="18" r="2.2" fill="url(#rubyGrad)" stroke="#fde047" stroke-width="0.6"/>
+                            <circle cx="9" cy="24" r="1.8" fill="url(#diamondGrad)" stroke="#fde047" stroke-width="0.5"/>
+                            <circle cx="55" cy="24" r="1.8" fill="url(#diamondGrad)" stroke="#fde047" stroke-width="0.5"/>
+                            <circle cx="16" cy="41" r="1.6" fill="url(#diamondGrad)"/>
+                            <circle cx="24" cy="42.5" r="1.8" fill="url(#rubyGrad)"/>
+                            <circle cx="32" cy="43.5" r="2.2" fill="url(#diamondGrad)" stroke="#ffffff" stroke-width="0.5"/>
+                            <circle cx="40" cy="42.5" r="1.8" fill="url(#rubyGrad)"/>
+                            <circle cx="48" cy="41" r="1.6" fill="url(#diamondGrad)"/>
+                        </g>
                     </svg>
                 </div>
                 <img src="profile.jpg?v=2" alt="Avatar" class="avatar" id="profile-avatar-top">

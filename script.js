@@ -48,26 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
         bgVideo.volume = parseFloat(e.target.value);
     });
 
-    // Compteur de visites animé
+    // Compteur de visites animé (base 1 488, +1 par nouvelle visite)
+    const VISITS_BASE = 1488;
     const viewsCountText = document.getElementById('views-count-text');
-    function initVisitsCounter() {
-        let visits = 1482;
-        try {
-            const savedVisits = localStorage.getItem('site_views_count');
-            if (savedVisits) {
-                visits = parseInt(savedVisits, 10) + 1;
-            } else {
-                visits = 1482 + Math.floor(Math.random() * 15);
-            }
-            localStorage.setItem('site_views_count', visits.toString());
-        } catch {}
 
+    function initVisitsCounter() {
+        let visits = VISITS_BASE;
+        try {
+            const stored = localStorage.getItem('site_visits_total');
+            const sessionKey = sessionStorage.getItem('site_visited_this_session');
+
+            if (!sessionKey) {
+                // Nouvelle visite : on incrémente
+                const prev = stored ? parseInt(stored, 10) : VISITS_BASE;
+                visits = Math.max(VISITS_BASE, prev) + 1;
+                localStorage.setItem('site_visits_total', visits.toString());
+                sessionStorage.setItem('site_visited_this_session', '1');
+            } else {
+                // Rechargement dans la même session, on affiche juste le total actuel
+                visits = stored ? Math.max(VISITS_BASE, parseInt(stored, 10)) : VISITS_BASE;
+            }
+        } catch {
+            visits = VISITS_BASE;
+        }
         animateCounter(viewsCountText, visits, 1600);
     }
 
     function animateCounter(element, target, duration) {
         if (!element) return;
-        const start = Math.max(0, target - 85);
+        const start = Math.max(0, target - 60);
         const startTime = performance.now();
 
         function update(currentTime) {
