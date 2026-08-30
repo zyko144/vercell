@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (profileNameTop) profileNameTop.textContent = 'vercel';
         if (enterTitleName) enterTitleName.textContent = 'vercel';
-        if (cardUsername) cardUsername.textContent = 'vercel';
+        if (cardUsername) cardUsername.textContent = data.display_name || data.username || 'vq';
 
         if (data.avatar_url) {
             if (profileAvatarTop) {
