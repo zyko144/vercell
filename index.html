@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Quality</title>
+    <link rel="stylesheet" href="style.css?v=300">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Écran d'entrée -->
+    <div id="enter-screen" class="glass-panel">
+        <h1 class="enter-title neon-name pseudo-font" id="enter-title-name">𝐞𝐱</h1>
+        <p class="pulse-text">Cliquez pour entrer</p>
+    </div>
+
+    <!-- Vidéo de fond -->
+    <div class="video-container">
+        <video id="bg-video" loop playsinline>
+            <source src="background.mp4?v=250" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+    </div>
+
+    <!-- Contrôles en bas à droite -->
+    <div class="bottom-right-controls">
+        <div id="location-corner" class="location-badge-corner glass-panel">
+            <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <span class="location-text">Dubaï</span>
+        </div>
+
+        <div id="volume-control" class="hidden glass-panel">
+            <label for="volume-slider">🔊</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+        </div>
+    </div>
+
+    <!-- Notification Copie -->
+    <div id="copy-toast" class="copy-toast">✨ Pseudo @vq copié !</div>
+
+    <!-- Contenu principal -->
+    <div id="main-content" class="hidden">
+        <div class="content-wrapper">
+            <img src="profile.jpg?v=2" alt="Avatar" class="avatar" id="profile-avatar-top">
+            <h2 class="neon-name pseudo-font" id="profile-name-top">𝐞𝐱</h2>
+            <p class="bio luxury-bio">𝖎𝖓𝖉𝖊𝖙𝖗𝖔𝖓𝖆𝖇𝖑𝖊</p>
+            
+            <div class="links">
+                <!-- CARTE 1 : C.E.O Quality (Jaune Or) - Cliquer pour copier -->
+                <div class="featured-card card-yellow copy-user-card" id="ceo-profile-card" title="Cliquer pour copier le pseudo @vq">
+                    <div class="card-tag">
+                        <span class="card-tag__dot dot-yellow"></span>
+                        <span class="card-tag__text">C.E.O QUALITY</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="avatar-container">
+                            <img src="profile.jpg?v=2" alt="Avatar" class="presence-avatar" id="card-avatar">
+                            <span id="presence-dot" class="status-indicator online" title="En ligne"></span>
+                        </div>
+                        <div class="card-info">
+                            <div class="name-row">
+                                <span class="card-username pseudo-font" id="card-username">𝐞𝐱</span>
+                                <span class="card-handle">@vq</span>
+                                <span class="badge-tag badge-yellow">👑 C.E.O</span>
+                            </div>
+                            <span id="presence-status-text" class="status-subhead is-online">En ligne sur Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARTE 2 : Notre application Quality 1.0.1 (Transparent / Glass) -->
+                <a href="Quality_setup.exe" class="featured-card card-transparent" style="text-decoration:none;color:inherit;">
+                    <div class="card-tag">
+                        <span class="card-tag__dot dot-white"></span>
+                        <span class="card-tag__text">NOTRE APPLICATION</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="avatar-container">
+                            <img src="logo_ocean.jpg?v=3" alt="Quality Logo" class="presence-avatar">
+                            <span class="status-indicator online"></span>
+                        </div>
+                        <div class="card-info">
+                            <div class="name-row">
+                                <span class="card-username">Quality 1.0.1</span>
+                                <span class="badge-tag badge-glass">⚡ App</span>
+                            </div>
+                            <span class="status-subhead">L'expérience Discord réinventée</span>
+                            <span class="click-to-install">click to install</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CARTE 3 : PayPal (Transparent / Glass) -->
+                <a href="https://paypal.me/steamapp" target="_blank" class="featured-card card-transparent" style="text-decoration:none;color:inherit;">
+                    <div class="card-tag">
+                        <span class="card-tag__dot dot-white"></span>
+                        <span class="card-tag__text">PAYPAL</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="avatar-container">
+                            <img src="paypal_custom.png?v=1" alt="PayPal Logo" class="presence-avatar">
+                        </div>
+                        <div class="card-info">
+                            <div class="name-row">
+                                <span class="card-username">Faire un don</span>
+                                <span class="badge-tag badge-glass">💙 Support</span>
+                            </div>
+                            <span class="status-subhead">paypal.me/steamapp</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=320"></script>
+</body>
+</html>
