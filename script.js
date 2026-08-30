@@ -48,6 +48,45 @@ document.addEventListener('DOMContentLoaded', () => {
         bgVideo.volume = parseFloat(e.target.value);
     });
 
+    // Compteur de visites animé
+    const viewsCountText = document.getElementById('views-count-text');
+    function initVisitsCounter() {
+        let visits = 1482;
+        try {
+            const savedVisits = localStorage.getItem('site_views_count');
+            if (savedVisits) {
+                visits = parseInt(savedVisits, 10) + 1;
+            } else {
+                visits = 1482 + Math.floor(Math.random() * 15);
+            }
+            localStorage.setItem('site_views_count', visits.toString());
+        } catch {}
+
+        animateCounter(viewsCountText, visits, 1600);
+    }
+
+    function animateCounter(element, target, duration) {
+        if (!element) return;
+        const start = Math.max(0, target - 85);
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (target - start) * ease);
+            element.textContent = current.toLocaleString('fr-FR');
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                element.textContent = target.toLocaleString('fr-FR');
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    initVisitsCounter();
+
     // Click to copy @vq
     let toastTimeout = null;
     if (ceoProfileCard) {

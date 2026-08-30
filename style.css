@@ -158,6 +158,63 @@ body, html {
     max-width: 520px;
 }
 
+/* ── Bottom Left Controls (Compteur de visites) ── */
+.bottom-left-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.views-badge-corner {
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.views-badge-corner:hover {
+    transform: translateY(-2px);
+    border-color: rgba(253, 224, 71, 0.4);
+}
+
+.views-icon {
+    width: 15px;
+    height: 15px;
+    color: #fde047;
+    filter: drop-shadow(0 0 6px rgba(253, 224, 71, 0.8));
+    animation: views-pulse 2.5s infinite alternate;
+}
+
+.views-text {
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.views-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+@keyframes views-pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    100% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px rgba(253, 224, 71, 1)); }
+}
+
 .avatar {
     width: 120px;
     height: 120px;
@@ -166,6 +223,59 @@ body, html {
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.3), 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ── Avatar Crown Wrapper ── */
+.avatar-crown-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.avatar-crown-wrapper .avatar {
+    margin-bottom: 0;
+}
+
+.crown-icon-animated {
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    z-index: 5;
+    pointer-events: none;
+    animation: crown-float 3s ease-in-out infinite alternate;
+}
+
+.crown-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.85)) drop-shadow(0 0 16px rgba(234, 179, 8, 0.5));
+    animation: crown-shimmer 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes crown-float {
+    0% {
+        transform: translateX(-50%) translateY(0px) rotate(-3deg) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-6px) rotate(0deg) scale(1.05);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-2px) rotate(3deg) scale(1);
+    }
+}
+
+@keyframes crown-shimmer {
+    0% {
+        filter: drop-shadow(0 0 6px rgba(253, 224, 71, 0.7)) drop-shadow(0 0 12px rgba(234, 179, 8, 0.4));
+    }
+    100% {
+        filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 24px rgba(253, 224, 71, 0.9));
+    }
 }
 
 /* Neon Name */

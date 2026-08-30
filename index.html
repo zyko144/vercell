@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Quality</title>
-    <link rel="stylesheet" href="style.css?v=300">
+    <link rel="stylesheet" href="style.css?v=330">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -24,6 +24,18 @@
             <source src="background.mp4?v=250" type="video/mp4">
             Votre navigateur ne supporte pas la balise vidéo.
         </video>
+    </div>
+
+    <!-- Contrôles en bas à gauche (Compteur de visites) -->
+    <div class="bottom-left-controls">
+        <div id="views-counter-badge" class="views-badge-corner glass-panel" title="Nombre total de visites">
+            <svg class="views-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span id="views-count-text" class="views-text">1,482</span>
+            <span class="views-label">visites</span>
+        </div>
     </div>
 
     <!-- Contrôles en bas à droite -->
@@ -47,7 +59,31 @@
     <!-- Contenu principal -->
     <div id="main-content" class="hidden">
         <div class="content-wrapper">
-            <img src="profile.jpg?v=2" alt="Avatar" class="avatar" id="profile-avatar-top">
+            <!-- Avatar avec couronne animée -->
+            <div class="avatar-crown-wrapper">
+                <div class="crown-icon-animated">
+                    <svg viewBox="0 0 24 24" fill="none" class="crown-svg">
+                        <defs>
+                            <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fff5c0"/>
+                                <stop offset="40%" stop-color="#fde047"/>
+                                <stop offset="100%" stop-color="#ca8a04"/>
+                            </linearGradient>
+                            <filter id="crownGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+                                <feGaussianBlur stdDeviation="1.2" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+                        <path d="M2 19h20v2.5H2V19zm1.2-3.8L5 7.5l4.5 4.8L12 3.5l2.5 8.8L19 7.5l1.8 7.7H3.2z" fill="url(#crownGrad)" filter="url(#crownGlowFilter)"/>
+                        <circle cx="12" cy="3.5" r="1.6" fill="#ffffff" filter="url(#crownGlowFilter)"/>
+                        <circle cx="5" cy="7.5" r="1.3" fill="#fffbe8"/>
+                        <circle cx="19" cy="7.5" r="1.3" fill="#fffbe8"/>
+                        <circle cx="9.5" cy="12.3" r="1" fill="#fef08a"/>
+                        <circle cx="14.5" cy="12.3" r="1" fill="#fef08a"/>
+                    </svg>
+                </div>
+                <img src="profile.jpg?v=2" alt="Avatar" class="avatar" id="profile-avatar-top">
+            </div>
             <h2 class="neon-name pseudo-font" id="profile-name-top">𝐞𝐱</h2>
             <p class="bio luxury-bio">𝖎𝖓𝖉𝖊𝖙𝖗𝖔𝖓𝖆𝖇𝖑𝖊</p>
             
@@ -119,6 +155,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=320"></script>
+    <script src="script.js?v=330"></script>
 </body>
 </html>
