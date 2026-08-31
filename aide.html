@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -31,7 +31,7 @@
       <a href="index.html">Accueil</a>
       <a href="telecharger.html">Telecharger</a>
       <a href="player.html">Lecteur web</a>
-      <a href="aide.html" aria-current="page">Aide</a>
+      <span class="nav__item-indisponible" title="Support actuellement indisponible"><span class="texte-barre">Support</span> <span class="badge-croix">✕</span></span>
       <a href="securite.html">Securite</a>
       <a class="bouton bouton--principal" href="https://github.com/zyko144/quality/releases/latest/download/Quality-setup.exe">Telecharger</a>
     </nav>
@@ -41,6 +41,14 @@
 <main id="contenu">
 
   <section class="enveloppe section section--serre">
+    <div class="bandeau-indisponible">
+      <span class="bandeau-indisponible__icone">✕</span>
+      <div>
+        <strong>Support en ligne actuellement indisponible</strong>
+        <p>Le centre d'assistance et le support technique sont actuellement fermés. Nous reviendrons très prochainement !</p>
+      </div>
+    </div>
+
     <div class="section__intro">
       <span class="surtitre">Centre d'aide</span>
       <h1>Une question, une reponse</h1>
@@ -924,7 +932,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="telecharger.html">Telecharger</a></li>
           <li><a href="player.html">Lecteur web</a></li>
-          <li><a href="aide.html">Centre d'aide</a></li>
+          <li><span class="nav__item-indisponible" style="padding:0;" title="Support actuellement indisponible"><span class="texte-barre">Support</span> <span class="badge-croix">✕</span></span></li>
           <li><a href="securite.html">Securite</a></li>
         </ul>
       </div>
@@ -958,4 +966,5 @@
 <script src="assets/site.js"></script>
 </body>
 </html>
+
 
